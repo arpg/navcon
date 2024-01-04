@@ -1,0 +1,5 @@
+string sentence
+---
+bool success
+int32 x
+int32 y

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <arg name="vehicle_name" default="robot"/>
+    <arg name="lidar_link" default="horiz_ouster_link"/>
+    <arg name="base_link" default="imu_viz_link"/>
+
+    <!--Localize Artifacts Arguments-->
+
+        <!--Number of camera streams-->
+        <arg name="num_cam" default="3"/>
+        <!--Enable if non rectified image-->
+        <arg name="rectify_point" default="false"/>
+        <!--To use sequential camera info topics set this flag-->
+        <arg name="cam_front_info" default="cam_front/camera_info"/>
+        <arg name="cam_left_info" default="cam_left/camera_info"/>
+        <arg name="cam_right_info" default="cam_right/camera_info"/>
+        <arg name="cam_back_info" default="cam_back/camera_info"/>
+        <!--Subscriber Topics-->
+        <arg name="detected_image_topic" default="trt_yolo_ros/bounding_boxes/image_raw/compressed"/>
+        <arg name="octomap_topic" default="merged_map"/>
+
+        <!--Client Arguments-->
+        <arg name="url" default="http://127.0.0.1:8080/nav_server"/>
+        <arg name="cam_front" default="cam_front/image_rect_color/compressed"/>
+        <arg name="cam_left" default="cam_left/image_rect_color/compressed"/>
+        <arg name="cam_right" default="cam_right/image_rect_color/compressed"/>
+
+
+      
+	<group ns="$(arg vehicle_name)">
+        <!--Localize Artifacts-->  
+        <node pkg="navcon_client" type="project_coordinates_node" name ="project_coordinates" output="screen">
+                <param name="num_cam" value="$(arg num_cam)"/>
+                <param name="cam0_info" value="$(arg cam_front_info)"/>
+                <param name="cam1_info" value="$(arg cam_left_info)"/>
+                <param name="cam2_info" value="$(arg cam_right_info)"/>
+                <param name="cam3_info" value="$(arg cam_left_info)"/>
+                <param name="octomap_topic" value="$(arg octomap_topic)"/>
+		        <param name="lidar_link" value="$(arg lidar_link)"/>
+        </node>
+
+        <node pkg="navcon_client" type="navcon_navigation_node.py" name="navigation_client" output= "screen">
+                <param name= "url"  value="$(arg url)"/>
+                <param name="cam_front" value="$(arg cam_front)"/>
+                <param name="cam_left" value="$(arg cam_left)"/>
+                <param name="cam_right" value="$(arg cam_right)"/>
+        </node>
+    </group>
+        <node pkg="rostopic" type="rostopic" name="scan_task_pub" output="screen" args="pub -r 5 $(arg vehicle_name)/task std_msgs/String 'data: guiCMD'" />
+</launch>

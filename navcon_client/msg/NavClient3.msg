@@ -1,0 +1,12 @@
+Header header
+string sentence
+sensor_msgs/CompressedImage box_image
+sensor_msgs/CompressedImage left_image
+sensor_msgs/CompressedImage front_image
+sensor_msgs/CompressedImage right_image
+int32 x
+int32 y
+int32 left
+int32 lower
+int32 right
+int32 upper

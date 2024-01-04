@@ -1,0 +1,21 @@
+[submodule "scan_plan"]
+	path = scan_plan
+	url = git@github.com:arpg/scan_plan
+[submodule "marble_mapping"]
+	path = marble_mapping
+	url = git@github.com:arpg/marble_mapping
+[submodule "rough_octomap"]
+	path = rough_octomap
+	url = git@github.com:arpg/rough_octomap
+[submodule "bobcat"]
+	path = bobcat
+	url = git@github.com:arpg/bobcat
+[submodule "LIO-SAM"]
+	path = LIO-SAM
+	url = git@github.com:arpg/LIO-SAM
+[submodule "marble_guidance"]
+	path = marble_guidance
+	url = git@github.com:arpg/marble_guidance
+[submodule "navcon_server/GLIP"]
+	path = navcon_server/GLIP
+	url = https://github.com/sachit-menon/GLIP.git
