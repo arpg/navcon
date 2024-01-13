@@ -1,5 +1,5 @@
-# Nav Con Client
-This is a ros node client for the Nav Con server. 
+# NavCon Client
+This is a ros node client for the NavCon server. 
 
 For a single images use:
 
@@ -11,7 +11,7 @@ For three images use:
 
 You will need to update the arguments to match the setup both the setup of the server and your robot.
 
-## Build Navcon Client
+## Build NavCon Client
 
 First step is to source your ROS.
 ```bash
@@ -75,17 +75,15 @@ with ``#include <opencv2/opencv.hpp>``.
 We also need to configure ``CMakeLists.txt`` to replace ``set(CMAKE_CXX_FLAGS "-std=c++11")`` with
  ``set(CMAKE_CXX_FLAGS "-std=c++14")``
 
-:::info
-According to the ``issue`` on lio_sam repo, one addition step was mentioned.
-``Move #include <opencv2/opencv.hpp> after the pcl headers`` However, in this specific 
-commit using by NavCon, we don't have to perform this step.
-:::
+> [!NOTE]
+> According to the ``issue`` on lio_sam repo, one addition step was mentioned.
+> ``Move #include <opencv2/opencv.hpp> after the pcl headers`` However, in this specific 
+> commit using by NavCon, we don't have to perform this step.
 
 Now, we should be able to build the whole Navcon package.
 
-:::info
-To verify we have all depencies for ``lio_sam``, we can use ``catkin_make --pkg lio_sam``
-:::
+> [!NOTE]info
+> To verify we have all depencies for ``lio_sam``, we can use ``catkin_make --pkg lio_sam``
 
 ### Build the Ros Package
 
