@@ -19,3 +19,9 @@
 [submodule "navcon_server/GLIP"]
 	path = navcon_server/GLIP
 	url = https://github.com/sachit-menon/GLIP.git
+[submodule "marble_artifact_detection_msgs"]
+	path = marble_artifact_detection_msgs
+	url = https://github.com/arpg/marble_artifact_detection_msgs.git
+[submodule "scan_plan_msgs"]
+	path = scan_plan_msgs
+	url = https://github.com/arpg/scan_plan_msgs.git

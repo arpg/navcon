@@ -31,7 +31,7 @@ cache = Memory('cache/' if config.use_cache else None, verbose=0)
 mp.set_start_method('spawn', force=False)
 from vision_processes_nav import forward, finish_all_consumers  # This import loads all the models. May take a while
 from image_patch_nav import *
-from video_segment_nav import *
+# from video_segment_nav import *
 from datasets.dataset import MyDataset
 
 console = Console(highlight=False, force_terminal=False)

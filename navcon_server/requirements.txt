@@ -1,4 +1,7 @@
-accelerate==0.18.0
+numpy==1.23.5
+Flask==3.0.0
+gdown==2.3.1
+accelerate==0.26.1
 backoff==2.2.1
 bitsandbytes==0.38.1
 cityscapesscripts==2.2.1
@@ -8,7 +11,7 @@ dill==0.3.6
 einops==0.6.0
 ftfy==6.1.1
 h5py==3.8.0
-inflect==6.0.2
+inflect==7.0.0
 ipython==8.11.0
 ipykernel==6.22.0
 jupyter==1.0.0
@@ -17,7 +20,6 @@ kornia==0.6.9
 matplotlib==3.6.2
 nltk==3.8.1
 num2words==0.5.12
-numpy==1.23.5
 omegaconf==2.3.0
 git+https://github.com/openai/openai-python.git
 opencv_python_headless==4.5.5.64
